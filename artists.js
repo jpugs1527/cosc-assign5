@@ -3,14 +3,13 @@ var cheerio = require('cheerio');
 var nodemailer = require('nodemailer');
 require('dotenv').config();
 
-console.log(process.env.PASSWORD)
 var transporter = nodemailer.createTransport({
   host: 'smtp.gmail.com',
   port: 465,
   secure: true,
   auth: {
-    user: 'jpugs1527@gmail.com',
-    pass: 'psswd'
+    user: process.env.EMAIL_USERNAME,
+    pass: process.env.EMAIL_PASSWORD
   }
 });
 
